@@ -83,5 +83,4 @@ spec:
       volumes:
         - name: ci-data-es
           persistentVolumeClaim:
-            claimName: es-claim-pvc
-      serviceAccountName: geo-search-sa            
+            claimName: es-claim-pvc           
