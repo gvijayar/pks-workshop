@@ -1,7 +1,16 @@
 ## Pivotal Container Service Workshop
 This is a sample SpringBoot application that performs Geo Bounded queries against an Elastic Search instance and plots the data on a map interactively. This application can be run on a workstation or in a cloud environment such as Cloud Foundry. In this example, I will show how to deploy the application on a running Cloud Foundry instance. 
 
-Please follow these steps to deploy this application.
+### Accessing the Dashboard
+
+To access Dashboard from your local workstation you must create a secure channel to your Kubernetes cluster. Run the following command:
+
+$ kubectl proxy
+Now access Dashboard at:
+
+http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/.
+
+### Please follow these steps to deploy this application.
 
 1. Create a user defined Namespace
 <ul><pre>kubectl create namespace {USER_NAMESPACE}</pre></ul>
