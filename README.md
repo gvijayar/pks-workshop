@@ -20,7 +20,8 @@ imagePullSecrets:
 - name: regSecret
 </pre></ul>
 
-4. Create the Storage Vomune
+4. Create the Storage Volume
 <ul><pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_1_ProvisionStorage.yaml -n {USER_NAMESPACE}</pre></ul>
 
-
+4. Deploy Elastic Search
+<ul><pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_1_ProvisionStorage.yaml -n {USER_NAMESPACE}</pre></ul>
