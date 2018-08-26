@@ -37,7 +37,7 @@ spec:
           capabilities:
             add:
               - IPC_LOCK
-        image: gvijayar/harbor-elasticsearch:1.0
+        image: workshop/harbor-elasticsearch:1.0
         env:
         - name: KUBERNETES_CA_CERTIFICATE_FILE
           valueFrom:
