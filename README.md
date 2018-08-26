@@ -30,4 +30,4 @@ imagePullSecrets:
 <ul><pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_3_ExposeElasticSearch.yaml -n {USER_NAMESPACE}</pre></ul>
 
 7. Load the Data via a Job
-<ul><pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_3_ExposeElasticSearch.yaml -n {USER_NAMESPACE}</pre></ul>
+<ul><pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_4_LoadData.yaml -n {USER_NAMESPACE}</pre></ul>
