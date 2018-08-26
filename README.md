@@ -26,5 +26,5 @@ imagePullSecrets:
 5. Deploy Elastic Search
 <ul><pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_2_DeployElasticSearch.yaml -n {USER_NAMESPACE}</pre></ul>
 
-5. Load Data via a Job
-<ul><pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_2_DeployElasticSearch.yaml -n {USER_NAMESPACE}</pre></ul>
+5. Expose the Elastic Search Service
+<ul><pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_3_ExposeElasticSearch.yaml -n {USER_NAMESPACE}</pre></ul>
