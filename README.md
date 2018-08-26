@@ -3,7 +3,7 @@ This is a sample SpringBoot application that performs Geo Bounded queries agains
 
 Please follow these steps to deploy this application.
 
-Step 0: Create Harbor Registry Secret
+1. Step 0: Create Harbor Registry Secret
 <ul><pre>kubectl create secret docker-registry regsecret --docker-server="https://harbor.pks.cfrocket.com" --docker-username="USER_NAME" --docker-password="PASSWORD" --docker-email="user@acme.org" -n NAMESPACE</pre></ul>
 
 2. Initialize the Elastic Search service with Geo Location data. Update the scripts with the Elastic Search Service endpoints.
