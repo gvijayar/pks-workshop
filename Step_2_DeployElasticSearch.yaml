@@ -80,6 +80,8 @@ spec:
         volumeMounts:
         - mountPath: /usr/share/elasticsearch/data
           name: ci-data-es
+        imagePullSecrets:
+        - name: regsecret
       volumes:
         - name: ci-data-es
           persistentVolumeClaim:
