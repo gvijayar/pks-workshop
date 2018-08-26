@@ -9,7 +9,13 @@ Please follow these steps to deploy this application.
 2. Create Harbor Registry Secret
 <ul><pre>kubectl create secret docker-registry regsecret --docker-server="https://{HARBOR_REGISTRY_URL}" --docker-username="USER_NAME" --docker-password="PASSWORD" --docker-email="user@acme.org" -n {USER_NAMESPACE}</pre></ul>
 
-3. Initialize the Elastic Search service with Geo Location data. Update the scripts with the Elastic Search Service endpoints.
+3. Create a new Service Account and Image pull secret
+<ul><pre>
+kubectl create serviceaccount geo-search-sa -n {USER_NAMESPACE}
+kubectl patch serviceaccount geo-search-sa -p '{\"imagePullSecrets\": [{\"name\": \"regsecret\"}]}' -n user1
+</pre></ul>
+
+4. Initialize the Elastic Search service with Geo Location data. Update the scripts with the Elastic Search Service endpoints.
 <ul><pre>src/main/resources/data/create_schema.sh</pre></ul>
 <ul><pre>src/main/resources/data/insert_big_cities.sh</pre></ul>
 
