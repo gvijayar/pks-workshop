@@ -34,3 +34,7 @@ imagePullSecrets:
 
 8. Deploy the SpringBoot Geosearch Application
 <ul><pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_5_DeploySpringBootApp.yaml -n {USER_NAMESPACE}</pre></ul>
+
+8. Expose the SpringBoot Application
+<ul><pre>kubectl create -f https://github.com/gvijayar/pks-workshop/blob/master/Step_6_ExposeSpringBootApp.yaml -n {USER_NAMESPACE}</pre></ul>
+
