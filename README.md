@@ -5,7 +5,8 @@ This is a sample SpringBoot application that performs Geo Bounded queries agains
 
 To access Dashboard from your local workstation you must create a secure channel to your Kubernetes cluster. Run the following command:
 
-$ kubectl proxy
+<pre>kubectl proxy</pre>
+
 Now access Dashboard at:
 
 http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/.
