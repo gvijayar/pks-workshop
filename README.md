@@ -20,8 +20,7 @@ imagePullSecrets:
 - name: regSecret
 </pre></ul>
 
-4. Initialize the Elastic Search service with Geo Location data. Update the scripts with the Elastic Search Service endpoints.
-<ul><pre>src/main/resources/data/create_schema.sh</pre></ul>
-<ul><pre>src/main/resources/data/insert_big_cities.sh</pre></ul>
+4. Create the Storage Vomune
+<ul><pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_1_ProvisionStorage.yaml -n {USER_NAMESPACE}</pre></ul>
 
 
