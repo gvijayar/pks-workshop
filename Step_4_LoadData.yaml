@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: esinitializer
+spec:
+  template:
+    metadata:
+      name: esinitializer
+    spec:
+      containers:
+      - name: esinitializer
+        image: gvijayar/es-init:latest
+      initContainers:
+      - name: init-myservice
+        image: busybox
+        command: ['sh', '-c', 'until nslookup elasticsearch; do echo waiting for elasticsearch; sleep 2; done;']        
+      restartPolicy: Never

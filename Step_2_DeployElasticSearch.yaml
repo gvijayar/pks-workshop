@@ -1,0 +1,86 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: elastic-search-config
+data:
+  es.cert: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+  es.cluster: myesdb
+  es.discovery: elasticsearch
+  es.http: "true"
+  es.nodedata: "true"
+  es.nodemaster: "true"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: elasticsearch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: elasticsearch         
+  template:
+    metadata:
+      labels:
+        component: elasticsearch    
+    spec:
+      initContainers:
+      - name: init-sysctl
+        image: busybox
+        imagePullPolicy: Always
+        command: ["sysctl", "-w", "vm.max_map_count=262144"]
+        securityContext:
+          privileged: true
+      containers:
+      - name: elasticsearch
+        securityContext:
+          capabilities:
+            add:
+              - IPC_LOCK
+        image: gvijayar/harbor-elasticsearch:1.0
+        env:
+        - name: KUBERNETES_CA_CERTIFICATE_FILE
+          valueFrom:
+            configMapKeyRef:
+              name: elastic-search-config
+              key: es.cert
+              
+        - name: "CLUSTER_NAME"
+          valueFrom:
+            configMapKeyRef:
+              name: elastic-search-config
+              key: es.cluster
+        - name: "DISCOVERY_SERVICE"
+          valueFrom:
+            configMapKeyRef:
+              name: elastic-search-config
+              key: es.discovery
+        - name: NODE_MASTER
+          valueFrom:
+            configMapKeyRef:
+              name: elastic-search-config
+              key: es.nodemaster
+        - name: NODE_DATA
+          valueFrom:
+            configMapKeyRef:
+              name: elastic-search-config
+              key: es.nodedata
+        - name: HTTP_ENABLE
+          valueFrom:
+            configMapKeyRef:
+              name: elastic-search-config
+              key: es.http
+        ports:
+        - containerPort: 9200
+          name: http
+          protocol: TCP
+        - containerPort: 9300
+          name: transport
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /usr/share/elasticsearch/data
+          name: ci-data-es
+      volumes:
+        - name: ci-data-es
+          persistentVolumeClaim:
+            claimName: es-claim-pvc  
