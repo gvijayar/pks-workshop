@@ -21,3 +21,4 @@ spec:
         image: harbor.pks.cfrocket.com/workshop/harbor-geosearch:4.0
         ports:
         - containerPort: 8080
+      serviceAccountName: userserviceaccount   
