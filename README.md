@@ -22,7 +22,7 @@ http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-da
 3. Create a new Service Account and Image pull secret
 <ul><pre>
 kubectl create serviceaccount userserviceaccount -n {USER_NAMESPACE}
-kubectl patch serviceaccount userserviceaccount -p "{\"imagePullSecrets\": [{\"name\": \"harborsecret\"}]}"
+kubectl patch serviceaccount userserviceaccount -p "{\"imagePullSecrets\": [{\"name\": \"harborsecret\"}]}" -n {USER_NAMESPACE}
 </pre></ul>
 
 4. Create the Storage Volume
