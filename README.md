@@ -12,7 +12,12 @@ Please follow these steps to deploy this application.
 3. Create a new Service Account and Image pull secret
 <ul><pre>
 kubectl create serviceaccount geo-search-sa -n {USER_NAMESPACE}
-kubectl patch serviceaccount geo-search-sa -p '{\"imagePullSecrets\": [{\"name\": \"regsecret\"}]}' -n user1
+kubectl edit serviceaccount geo-searcg-sa -n {USER_NAMESPACE}
+</pre></ul>
+and add the following lines
+<ul><pre>
+imagePullSecrets:
+- name: regSecret
 </pre></ul>
 
 4. Initialize the Elastic Search service with Geo Location data. Update the scripts with the Elastic Search Service endpoints.
