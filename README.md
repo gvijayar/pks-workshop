@@ -17,17 +17,12 @@ http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-da
 <ul><pre>kubectl create namespace {USER_NAMESPACE}</pre></ul>
 
 2. Create Harbor Registry Secret
-<ul><pre>kubectl create secret docker-registry regsecret --docker-server="https://{HARBOR_REGISTRY_URL}" --docker-username="USER_NAME" --docker-password="PASSWORD" --docker-email="user@acme.org" -n {USER_NAMESPACE}</pre></ul>
+<ul><pre>kubectl create secret docker-registry harborsecret --docker-server="https://{HARBOR_REGISTRY_URL}" --docker-username="USER_NAME" --docker-password="PASSWORD" --docker-email="user@acme.org" -n {USER_NAMESPACE}</pre></ul>
 
 3. Create a new Service Account and Image pull secret
 <ul><pre>
-kubectl create serviceaccount geo-search-sa -n {USER_NAMESPACE}
-kubectl edit serviceaccount geo-searcg-sa -n {USER_NAMESPACE}
-</pre></ul>
-and add the following lines
-<ul><pre>
-imagePullSecrets:
-- name: regSecret
+kubectl create serviceaccount userserviceaccount -n {USER_NAMESPACE}
+kubectl patch serviceaccount userserviceaccount -p "{\"imagePullSecrets\": [{\"name\": \"harborsecret\"}]}"
 </pre></ul>
 
 4. Create the Storage Volume
