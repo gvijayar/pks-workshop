@@ -43,3 +43,5 @@ kubectl patch serviceaccount userserviceaccount -p "{\"imagePullSecrets\": [{\"n
 9. Expose the SpringBoot Application
 <ul><pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_6_ExposeSpringBootApp.yaml -n {USER_NAMESPACE}</pre></ul>
 
+10. Scale the Frontend
+<ul><pre>kubectl scale deployment --replicas=3 geosearch -n {USER_NAMESPACE}</pre></ul>
