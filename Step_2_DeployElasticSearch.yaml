@@ -82,6 +82,5 @@ spec:
           name: ci-data-es
       volumes:
         - name: ci-data-es
-          persistentVolumeClaim:
-            claimName: es-claim-pvc
+          emptyDir: {}
       serviceAccountName: userserviceaccount     
