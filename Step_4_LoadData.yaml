@@ -9,7 +9,7 @@ spec:
     spec:
       containers:
       - name: esinitializer
-        image: gvijayar/es-init:latest
+        image: harbor.pks.cfrocket.com/workshop/es-init:latest
       initContainers:
       - name: init-myservice
         image: busybox
