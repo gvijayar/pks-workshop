@@ -1,0 +1,21 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: es-storage
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-standard
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: es-claim-pvc
+  annotations:
+    volume.beta.kubernetes.io/storage-class: standard
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: es-storage
