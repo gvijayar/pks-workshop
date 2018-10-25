@@ -16,11 +16,13 @@ http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-da
 1. Provision a StorageClass for the Cluster. This is provisioned at the Kubernetes cluster level and therefore no need to namespace qualify it.
 
 <ul>GCP:
+  
   <pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_0_ProvisionStorageClass_GCP.yaml</pre>
 </ul>
 
   
 <ul>vSphere:
+  
   <pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_0_ProvisionStorageClass_vSphere.yaml</pre>
 </ul>
 
