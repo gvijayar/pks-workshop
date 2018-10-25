@@ -29,7 +29,7 @@ http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-da
 2. Create a user defined Namespace
 <ul><pre>kubectl create namespace {USER_NAMESPACE}</pre></ul>
 
-3. Create Harbor Registry Secret
+3. Create Harbor Registry Secret. Use the Registry credentials that was provided to you for this step.
 <ul><pre>kubectl create secret docker-registry harborsecret --docker-server="https://{HARBOR_REGISTRY_URL}" --docker-username="USER_NAME" --docker-password="PASSWORD" --docker-email="user@acme.org" -n {USER_NAMESPACE}</pre></ul>
 
 4. Create a new Service Account and Image pull secret
