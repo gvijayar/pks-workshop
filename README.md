@@ -26,35 +26,35 @@ http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-da
   <pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_0_ProvisionStorageClass_vSphere.yaml</pre>
 </ul>
 
-1. Create a user defined Namespace
+2. Create a user defined Namespace
 <ul><pre>kubectl create namespace {USER_NAMESPACE}</pre></ul>
 
-2. Create Harbor Registry Secret
+3. Create Harbor Registry Secret
 <ul><pre>kubectl create secret docker-registry harborsecret --docker-server="https://{HARBOR_REGISTRY_URL}" --docker-username="USER_NAME" --docker-password="PASSWORD" --docker-email="user@acme.org" -n {USER_NAMESPACE}</pre></ul>
 
-3. Create a new Service Account and Image pull secret
+4. Create a new Service Account and Image pull secret
 <ul><pre>
 kubectl create serviceaccount userserviceaccount -n {USER_NAMESPACE}
 kubectl patch serviceaccount userserviceaccount -p "{\"imagePullSecrets\": [{\"name\": \"harborsecret\"}]}" -n {USER_NAMESPACE}
 </pre></ul>
 
-4. Create the Storage Volume
+5. Create the Storage Volume
 <ul><pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_1_ProvisionStorage.yaml -n {USER_NAMESPACE}</pre></ul>
 
-5. Deploy Elastic Search
+6. Deploy Elastic Search
 <ul><pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_2_DeployElasticSearch.yaml -n {USER_NAMESPACE}</pre></ul>
 
-6. Expose the Elastic Search Service
+7. Expose the Elastic Search Service
 <ul><pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_3_ExposeElasticSearch.yaml -n {USER_NAMESPACE}</pre></ul>
 
-7. Load the Data via a Job
+8. Load the Data via a Job
 <ul><pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_4_LoadData.yaml -n {USER_NAMESPACE}</pre></ul>
 
-8. Deploy the SpringBoot Geosearch Application
+9. Deploy the SpringBoot Geosearch Application
 <ul><pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_5_DeploySpringBootApp.yaml -n {USER_NAMESPACE}</pre></ul>
 
-9. Expose the SpringBoot Application
+10. Expose the SpringBoot Application
 <ul><pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_6_ExposeSpringBootApp.yaml -n {USER_NAMESPACE}</pre></ul>
 
-10. Scale the Frontend
+11. Scale the Frontend
 <ul><pre>kubectl scale deployment --replicas=3 geosearch -n {USER_NAMESPACE}</pre></ul>
