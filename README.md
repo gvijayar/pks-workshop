@@ -42,7 +42,7 @@ kubectl config set-context $(kubectl config current-context) --namespace=geosear
 
 
 3. Create Harbor Registry Secret. Use the Registry credentials that was provided to you for this step.
-<ul><pre>kubectl create secret docker-registry harborsecret --docker-server="https://{HARBOR_REGISTRY_URL}" --docker-username="USER_NAME" --docker-password="PASSWORD" --docker-email="user@acme.org"</pre></ul>
+<ul><pre>kubectl create secret docker-registry harborsecret --docker-server="$(echo $HARBOR_REGISTRY_URL)" --docker-username="$(echo $HARBOR_USERNAME)" --docker-password="$(echo $HARBOR_PASSWORD)" --docker-email="$(echo $HARBOR_EMAIL)"</pre></ul>
 
 4. Create a new Service Account and Image pull secret
 <ul><pre>
