@@ -21,4 +21,5 @@ spec:
         image: harbor.pks.cfrocket.com/workshop/harbor-geosearch:4.0
         ports:
         - containerPort: 8080
+        imagePullPolicy: Always
       serviceAccountName: userserviceaccount   
