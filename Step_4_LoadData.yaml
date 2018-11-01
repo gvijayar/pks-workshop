@@ -10,7 +10,6 @@ spec:
       containers:
       - name: esinitializer
         image: harbor.pks.cfrocket.com/workshop/es-init:latest
-        imagePullPolicy: Always
       initContainers:
       - name: init-myservice
         image: busybox
