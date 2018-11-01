@@ -13,6 +13,15 @@ http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-da
 
 ### Please follow these steps to deploy this application.
 
+Prerequisite: Initialize the environment with your credentials. Please use the account that was provided to you for this lab exercise.
+
+<pre>
+export HARBOR_REGISTRY_URL="harbor.pks.cfrocket.com"
+export HARBOR_USERNAME="User1"
+export HARBOR_PASSWORD="Pivotal1"
+export HARBOR_EMAIL="User1@acme.org"
+</pre>
+
 1. Provision a StorageClass for the Cluster. This is provisioned at the Kubernetes cluster level and therefore no need to namespace qualify it.
 
 <ul>GCP:
