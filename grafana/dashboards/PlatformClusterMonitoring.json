@@ -1,4 +1,46 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_INSTRUCTOR",
+      "label": "instructor",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "5.3.2"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": "5.0.0"
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "5.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "singlestat",
+      "name": "Singlestat",
+      "version": "5.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "table",
+      "name": "Table",
+      "version": "5.0.0"
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -16,8 +58,8 @@
   "editable": true,
   "gnetId": 1621,
   "graphTooltip": 0,
-  "id": 27,
-  "iteration": 1541611249702,
+  "id": null,
+  "iteration": 1541611662864,
   "links": [],
   "panels": [
     {
@@ -29,7 +71,7 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "instructor",
+      "datasource": "${DS_INSTRUCTOR}",
       "editable": true,
       "error": false,
       "format": "percent",
@@ -115,7 +157,7 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "instructor",
+      "datasource": "${DS_INSTRUCTOR}",
       "decimals": 2,
       "editable": true,
       "error": false,
@@ -202,7 +244,7 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "instructor",
+      "datasource": "${DS_INSTRUCTOR}",
       "decimals": 2,
       "editable": true,
       "error": false,
@@ -290,7 +332,7 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "instructor",
+      "datasource": "${DS_INSTRUCTOR}",
       "decimals": 2,
       "editable": true,
       "error": false,
@@ -376,7 +418,7 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "instructor",
+      "datasource": "${DS_INSTRUCTOR}",
       "decimals": 2,
       "editable": true,
       "error": false,
@@ -462,7 +504,7 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "instructor",
+      "datasource": "${DS_INSTRUCTOR}",
       "decimals": 2,
       "editable": true,
       "error": false,
@@ -548,7 +590,7 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "instructor",
+      "datasource": "${DS_INSTRUCTOR}",
       "decimals": 2,
       "editable": true,
       "error": false,
@@ -634,7 +676,7 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "instructor",
+      "datasource": "${DS_INSTRUCTOR}",
       "decimals": 2,
       "editable": true,
       "error": false,
@@ -720,7 +762,7 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(245, 54, 54, 0.9)"
       ],
-      "datasource": "instructor",
+      "datasource": "${DS_INSTRUCTOR}",
       "decimals": 2,
       "editable": true,
       "error": false,
@@ -802,7 +844,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "${DS_INSTRUCTOR}",
       "fill": 1,
       "gridPos": {
         "h": 9,
@@ -887,7 +929,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "instructor",
+      "datasource": "${DS_INSTRUCTOR}",
       "decimals": 2,
       "editable": true,
       "error": false,
@@ -994,7 +1036,7 @@
     },
     {
       "columns": [],
-      "datasource": null,
+      "datasource": "${DS_INSTRUCTOR}",
       "fontSize": "100%",
       "gridPos": {
         "h": 6,
@@ -1067,7 +1109,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "instructor",
+      "datasource": "${DS_INSTRUCTOR}",
       "decimals": 3,
       "editable": true,
       "error": false,
@@ -1177,7 +1219,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "instructor",
+      "datasource": "${DS_INSTRUCTOR}",
       "decimals": 2,
       "editable": true,
       "error": false,
@@ -1287,7 +1329,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "instructor",
+      "datasource": "${DS_INSTRUCTOR}",
       "decimals": 2,
       "editable": true,
       "error": false,
@@ -1399,11 +1441,8 @@
     "list": [
       {
         "allValue": ".*",
-        "current": {
-          "text": "All",
-          "value": "$__all"
-        },
-        "datasource": "instructor",
+        "current": {},
+        "datasource": "${DS_INSTRUCTOR}",
         "hide": 0,
         "includeAll": true,
         "label": null,
