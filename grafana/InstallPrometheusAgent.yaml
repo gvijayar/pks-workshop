@@ -224,5 +224,4 @@ spec:
   type: LoadBalancer 
   ports:
     - port: 8080
-      targetPort: 9090 
-      nodePort: 30000
+      targetPort: 9090
