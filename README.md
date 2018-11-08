@@ -35,7 +35,7 @@ export HARBOR_EMAIL="User1@acme.org"
   <pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_0_ProvisionStorageClass_vSphere.yaml</pre>
 </ul>
 
-2. Create a user defined Namespace
+2. Create a user defined Namespace. Note: Update the command below to use the namespace that you are going to be delpoying into.
 <ul><pre>kubectl create namespace geosearch
 kubectl config set-context $(kubectl config current-context) --namespace=geosearch
 </pre></ul>
