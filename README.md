@@ -15,7 +15,7 @@ Now access Dashboard at:
 
 http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/.
 
-### Please follow these steps to deploy this application.
+### Deploy A SpringBoot application with an Elastic Search Backend
 
 Prerequisite: Initialize the environment with your credentials. Please use the account that was provided to you for this lab exercise.
 
