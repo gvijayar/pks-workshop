@@ -1,16 +1,18 @@
 ## Pivotal Container Service Workshop
 This is a sample SpringBoot application that performs Geo Bounded queries against an Elastic Search instance and plots the data on a map interactively. This application can be run on a workstation or in a cloud environment such as Cloud Foundry. In this example, I will show how to deploy the application on a running Cloud Foundry instance.
+<!-- TOC depthFrom:3 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-  * [1. Install and Setup CLIs](#1-install-and-setup-clis)
-    + [Install PKS CLI](#install-pks-cli)
-    + [Install kubectl CLI](#install-kubectl-cli)
-  * [2. Cluster Access and Validation](#2-cluster-access-and-validation)
-    + [Get Cluster Credentials](#get-cluster-credentials)
-    + [Validating your Cluster](#validating-your-cluster)
-    + [Accessing the Dashboard](#accessing-the-dashboard)
-  * [3. Lab Exercise: Set Environment Variables](#3-lab-exercise--set-environment-variables)
-  * [4. Lab Exercise: Deploy A SpringBoot application with an Elastic Search Backend](#4-lab-exercise--deploy-a-springboot-application-with-an-elastic-search-backend)
-  
+- [1. Install and Setup CLIs](#1-install-and-setup-clis)
+	- [Install PKS CLI](#install-pks-cli)
+	- [Install kubectl CLI](#install-kubectl-cli)
+- [2. Cluster Access and Validation](#2-cluster-access-and-validation)
+	- [Get Cluster Credentials](#get-cluster-credentials)
+	- [Validating your Cluster](#validating-your-cluster)
+	- [Accessing the Dashboard](#accessing-the-dashboard)
+- [3. Lab Exercise: Set Environment Variables](#3-lab-exercise-set-environment-variables)
+- [4. Lab Exercise: Deploy A SpringBoot application with an Elastic Search Backend](#4-lab-exercise-deploy-a-springboot-application-with-an-elastic-search-backend)
+
+<!-- /TOC -->
 ### 1. Install and Setup CLIs
 #### Install PKS CLI
 In order to install the PKS CLI please follow these instructions: https://docs.pivotal.io/runtimes/pks/1-2/installing-pks-cli.html#windows. Note, you will need to register with network.pivotal.io in order to download the CLI.
