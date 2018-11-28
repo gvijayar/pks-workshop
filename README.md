@@ -1,6 +1,16 @@
 ## Pivotal Container Service Workshop
 This is a sample SpringBoot application that performs Geo Bounded queries against an Elastic Search instance and plots the data on a map interactively. This application can be run on a workstation or in a cloud environment such as Cloud Foundry. In this example, I will show how to deploy the application on a running Cloud Foundry instance.
 
+  * [1. Install and Setup CLIs](#1-install-and-setup-clis)
+    + [Install PKS CLI](#install-pks-cli)
+    + [Install kubectl CLI](#install-kubectl-cli)
+  * [2. Cluster Access and Validation](#2-cluster-access-and-validation)
+    + [Get Cluster Credentials](#get-cluster-credentials)
+    + [Validating your Cluster](#validating-your-cluster)
+    + [Accessing the Dashboard](#accessing-the-dashboard)
+  * [3. Lab Exercise: Set Environment Variables](#3-lab-exercise--set-environment-variables)
+  * [4. Lab Exercise: Deploy A SpringBoot application with an Elastic Search Backend](#4-lab-exercise--deploy-a-springboot-application-with-an-elastic-search-backend)
+  
 ### 1. Install and Setup CLIs
 #### Install PKS CLI
 In order to install the PKS CLI please follow these instructions: https://docs.pivotal.io/runtimes/pks/1-2/installing-pks-cli.html#windows. Note, you will need to register with network.pivotal.io in order to download the CLI.
@@ -14,6 +24,7 @@ What you download is the executable. After downloading, rename the file to `kube
 
 For reference, here are some other ways to install, https://kubernetes.io/docs/tasks/tools/install-kubectl
 
+### 2. Cluster Access and Validation
 #### Get Cluster Credentials
 You will need to retrieve the cluster credentials from PKS. First login using the the PKS credentials that were provided to you for this lab exercise.
 
@@ -54,9 +65,9 @@ When prompted for choosing either the Kubeconfig or Token, choose Kubeconfig.  Y
 
 On Windows, you may want to use Firefox or Chrome as Explorer has some issues.
 
-### 3. Deploy A SpringBoot application with an Elastic Search Backend
+### 3. Lab Exercise: Set Environment Variables
 
-Prerequisite: Initialize the environment with your credentials. Please use the account and user index that was provided to you for this lab exercise.
+Prerequisite: Initialize the environment with your credentials for the registry. Please use the account and user index that was provided to you for this lab exercise.
 
 Unix/Mac
 <pre>
@@ -76,6 +87,7 @@ $env:HARBOR_PASSWORD="Pivotal1"
 $env:HARBOR_EMAIL="User1@acme.org"
 </pre>
 
+### 4. Lab Exercise: Deploy A SpringBoot application with an Elastic Search Backend
 1. **(Skip this step)** Provision a StorageClass for the Cluster. This is provisioned at the Kubernetes cluster level and therefore no need to namespace qualify it.
 
 <ul>GCP:
