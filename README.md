@@ -16,6 +16,7 @@ http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-da
 Prerequisite: Initialize the environment with your credentials. Please use the account that was provided to you for this lab exercise.
 
 <pre>
+export USER_INDEX="1"
 export HARBOR_REGISTRY_URL="harbor.pks.cfrocket.com"
 export HARBOR_USERNAME="User1"
 export HARBOR_PASSWORD="Pivotal1"
@@ -36,8 +37,8 @@ export HARBOR_EMAIL="User1@acme.org"
 </ul>
 
 2. Create a user defined Namespace. Note: Update the command below to use the namespace that you are going to be delpoying into.
-<ul><pre>kubectl create namespace geosearch
-kubectl config set-context $(kubectl config current-context) --namespace=geosearch
+<ul><pre>kubectl create namespace geosearch-$(echo $USER_INDEX)
+kubectl config set-context $(kubectl config current-context) --namespace=geosearch-$(echo $USER_INDEX)
 </pre></ul>
 
 
