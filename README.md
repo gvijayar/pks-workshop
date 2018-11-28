@@ -152,8 +152,15 @@ kubectl patch serviceaccount userserviceaccount -p '{\"imagePullSecrets\": [{\"n
 9. Deploy the SpringBoot Geosearch Application
 <ul><pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_5_DeploySpringBootApp.yaml</pre></ul>
 
-10. Expose the SpringBoot Application
-<ul><pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_6_ExposeSpringBootApp.yaml</pre></ul>
+10. Expose the SpringBoot Application. This can be done in a couple of ways. We will look at two ways of doing it in this example.
+
+<ul>Exposing with the LoadBalancer
+	<pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_6_ExposeSpringBootApp.yaml</pre>
+</ul>
+
+<ul>Exposing with the Ingress 
+	<pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_6_ExposeSpringBootApp.yaml</pre>
+</ul>
 
 11. Scale the Frontend
 <ul><pre>kubectl scale deployment --replicas=3 geosearch</pre></ul>
