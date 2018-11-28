@@ -9,3 +9,10 @@
 </ul>
 
 2. Install the Grafana Dashboard Service
+
+
+<ul>
+  <pre>
+  kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/grafana/InstallGrafana.yaml
+  </pre>
+</ul>
