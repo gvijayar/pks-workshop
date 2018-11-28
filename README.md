@@ -23,7 +23,7 @@ export HARBOR_PASSWORD="Pivotal1"
 export HARBOR_EMAIL="User1@acme.org"
 </pre>
 
-1. Provision a StorageClass for the Cluster. This is provisioned at the Kubernetes cluster level and therefore no need to namespace qualify it.
+1. (Skip this step) Provision a StorageClass for the Cluster. This is provisioned at the Kubernetes cluster level and therefore no need to namespace qualify it.
 
 <ul>GCP:
   
