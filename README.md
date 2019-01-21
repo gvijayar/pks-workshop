@@ -162,5 +162,5 @@ kubectl patch serviceaccount userserviceaccount -p '{\"imagePullSecrets\": [{\"n
 	<pre>kubectl create -f https://raw.githubusercontent.com/gvijayar/pks-workshop/master/Step_6_ExposeSpringBootAppIngress.yaml</pre>
 </ul>
 
-11. Auto-Scale the Frontend (Update namespace with your's)
+11. Auto-Scale the Frontend
 <ul><pre>kubectl autoscale deployment geosearch --cpu-percent=70 --min=3 --max=10</pre></ul>
