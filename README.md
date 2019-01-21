@@ -163,4 +163,4 @@ kubectl patch serviceaccount userserviceaccount -p '{\"imagePullSecrets\": [{\"n
 </ul>
 
 11. Auto-Scale the Frontend (Update namespace with your's)
-<ul><pre>kubectl autoscale deployment -n geosearch frontend-autoscale --cpu-percent=70 --min=3 --max=10</pre></ul>
+<ul><pre>kubectl autoscale deployment geosearch --cpu-percent=70 --min=3 --max=10</pre></ul>
