@@ -23,6 +23,6 @@ spec:
         - containerPort: 8080
         resources:
           requests:
-            cpu: "500m"        
+            cpu: "100m"        
         imagePullPolicy: Always
       serviceAccountName: userserviceaccount   
