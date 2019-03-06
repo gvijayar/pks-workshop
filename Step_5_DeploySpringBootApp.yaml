@@ -18,7 +18,7 @@ spec:
         command: ['sh', '-c', 'until nslookup elasticsearch; do echo waiting for elasticsearch; sleep 60; done;']     
       containers:
       - name: geosearch-app
-        image: harbor.pks.cfrocket.com/workshop/harbor-geosearch:4.0
+        image: harbor.pks.cfrocket.com/workshop/springboot-geosearch:1.0
         ports:
         - containerPort: 8080
         resources:
